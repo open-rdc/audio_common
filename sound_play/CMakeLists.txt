@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
+add_definitions(-std=c++11)
 
 project(sound_play)
 
-find_package(catkin REQUIRED COMPONENTS message_generation roscpp actionlib_msgs)
+find_package(catkin REQUIRED COMPONENTS message_generation
+             roscpp
+             actionlib_msgs
+             move_base
+             std_srvs)
 
 add_action_files(DIRECTORY action FILES SoundRequest.action)
 add_message_files(DIRECTORY msg FILES SoundRequest.msg)
